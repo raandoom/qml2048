@@ -11,6 +11,12 @@ PageStackWindow {
     MainPage {
         id: mainPage
     }
+    About {
+        id: about
+        version: "v.0.1.1"
+        height: parent.height
+        width: parent.width
+    }
 
     ToolBarLayout {
         id: commonTools
@@ -43,6 +49,10 @@ PageStackWindow {
                         mainPage.newGameRequest(slider.value)
                     }
                 }
+            }
+            MenuItem {
+                text: qsTr("About")
+                onClicked: about.open()
             }
         }
     }
