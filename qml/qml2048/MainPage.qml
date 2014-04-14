@@ -9,19 +9,33 @@ Page {
         anchors.fill: parent
         color: "#faf8ef"
 
-        Board {
-            id: board
-            anchors.centerIn: parent
+        Column {
+            spacing: 2
             width: parent.width - 10
+            anchors.horizontalCenter: parent.horizontalCenter
 
-            SwipeArea {
-                id: swipe
-                anchors.fill: parent
+            ScoreArea {
+                id: score
+                width: parent.width
+                height: 130
+            }
 
-                onSwipeUp: board.moveTilesUp()
-                onSwipeDown: board.moveTilesDown()
-                onSwipeLeft: board.moveTilesLeft()
-                onSwipeRight: board.moveTilesRight()
+            Board {
+                id: board
+                width: parent.width
+
+                onMerged: score.addScore(value)
+
+                SwipeArea {
+                    id: swipe
+                    anchors.fill: parent
+
+
+                    onSwipeUp: board.moveTilesUp()
+                    onSwipeDown: board.moveTilesDown()
+                    onSwipeLeft: board.moveTilesLeft()
+                    onSwipeRight: board.moveTilesRight()
+                }
             }
         }
     }
