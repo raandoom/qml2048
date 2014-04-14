@@ -1,61 +1,148 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="80"
    height="80"
-   id="svg2">
+   width="80"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="qml2048.svg"
+   inkscape:export-filename="/home/hauke/Programme/qml204880.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <metadata
-     id="metadata8">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+     id="metadata36" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1024"
+     inkscape:window-height="706"
+     id="namedview34"
+     showgrid="false"
+     inkscape:zoom="5.9"
+     inkscape:cx="63.866986"
+     inkscape:cy="36.420781"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
   <defs
-     id="defs6" />
-  <image
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABHNCSVQICAgIfAhkiAAABT5JREFU
-eJztm0tsG0UYx/+ztmM7dpzGdhNKipqmKSBCeKkkTdIWJNQjnKgAqeJAQUDVA1KvXFCvPIpUoQoh
-LiCkihMKN6QcmldpUxQkEE2bgArUCok3ThonsWN7h0Pi9a7Xa6/3i4iCvt9pZnYe3/52d2Z244jk
-KCQY1yg7HcBuhwUSYYFEWCARFkiEBRJhgURYIBEWSIQFEmGBRFggERZIhAUSYYFEWCARFkiEBRJh
-gURYIBEWSIQFEmGBRFggERZIhAUSYYFEWCARFkiEBRJhgUS8rltKIPLEDXjDj0MILwAJLZfC2l8X
-kJ27VL2pBMKHPoe/7TSE8AHQUMgkkJo8CFHnJfXvPQPF16Tn1xMXbeNt6h6GL3IEQgluxZHDRnII
-6duvAKK+cYsINz+wjPRMwBc5WrVO8qqA8FjLo/0ZCMVv2y6bHEJ6+iVngQgfYgMbpiJ1zGqiseND
-BNvPV+0qPfMesv986mxcA3U/wuGur2vKA4D4Cet12fPMTFV5AOCPvwhvuHb/kLDIq1gtj4rypGaO
-L9x1EW5+q1u3wPTMaRRWf9Pz6qiAOiagjlqvvCwYM4AneMh03NhWaiUZzU9O1IwjdszZ2UZ6vtfT
-+bVpJEc2x1ycUCx3q/+Bdxz1acTVIrI09RhSk52bARRjEMDqzFvmioZz9DR2m/v4qcfUVh0z35km
-+WWEur5xHKvii+vpbOITyxy7nvhMT3tDvY771fuvu8UWWvYPS1lD7FXb3pseHdLTUsuhsP6LqWr5
-ifn2HKs4rvDuRaDtNT2/OBGoGmd6pnRXhbouI9RREiY1IPjgWUPdN6r2VYnt28ZIwNfygqnIKMXT
-eFBPr//5QeUu8vf1tLep33pcAtG+eT2fHKm9dBbWpiALa3o+0P4uYoMSkZ4fET9eekRWZ8/XvQMA
-tlFgdCBjyqenX7etm1serlguC0t62hM4YDkeN8x7K7fPOD7hxWshpO+cNZX5IqXHVR0VyMx97Kyz
-MrZHoIRldc3Mf1Wlgc0EJ6stDOa7bWP+S2exYfNRDXV+ZHs8uP99x32VQxYoNeuKmLr+UNW7Q3gi
-NtGUNo5S5kyHYoOanlbHQ843vhKIH5cQnqBelE9PYeVWab5u7LiA2KC7/zciCvSY5hGpbSB14wC0
-3N9VWzXETlUOxtempwtrv+rplmcX9HQmcRmQa3BKy5G7hvgyWLzWiuWfn8aGesWy9Yp0X3XcbxFX
-byLA5mponNC1zF2kbnbY1m965Ds0xItvGBLqmAflO1fjXZCa7IKWnbWUO6W4xzO2rfR2pPja0NI7
-Z2nnFFd3oLfpOZO8zL1LVeUBQPr3Nw05gfDhK+YKZY4K67NuQqub8qmiXur+mBA+/C38rS8bAtAQ
-aD+HQPu5ivWLV1TmFkzl/tZTyMyfRH7pBygN+9DSmzAdN86hMr+4OdlWQggIb6xUN5e0jT1+QiJ1
-82FomTtblYFon1pqW0jbtrWj7kc42rcE4W12VllKqOMlE97QAJqfGqvZLDkiHG9RhOJHtL+0hSp/
-BIUnhuhRe6luxy3yn34PzK+OY+WW/f4QANRxv6sNrR2yoGLpZk/NeqoLeQBhESEjAW/kefia+6Bl
-VGQXvnD9Ta6eMaE0IrDvbQjFj/zydeTuD5PG3TmB/xP4kz4RFkiEBRJhgURYIBEWSIQFEmGBRFgg
-ERZIhAUSYYFEWCARFkiEBRJhgURYIBEWSIQFEmGBRFggERZIhAUSUaTkvwu7RUpIBcC9nQ5ktyKA
-KUUI7N/pQHYrEujkOZCAEGhmgURYIBEWSORfO1mKhbPect0AAAAASUVORK5CYII=
-"
-     x="0"
-     y="0"
-     width="80"
-     height="80"
-     id="image10" />
+     id="defs4">
+    <linearGradient
+       id="hicg_overlay_grad"
+       gradientUnits="userSpaceOnUse"
+       x1="39.9995"
+       y1="5.1816"
+       x2="39.9995"
+       y2="58.8019">
+      <stop
+         offset="0"
+         style="stop-color:#FFFFFF"
+         id="stop7" />
+      <stop
+         offset="1"
+         style="stop-color:#000000"
+         id="stop9" />
+    </linearGradient>
+    <filter
+       id="hicg_drop_shadow">
+      <feOffset
+         in="SourceAlpha"
+         dx="0"
+         dy="4"
+         id="feOffset12" />
+      <feGaussianBlur
+         stdDeviation="4"
+         id="feGaussianBlur14" />
+      <feColorMatrix
+         type="matrix"
+         values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.5 0"
+         result="shadow"
+         id="feColorMatrix16" />
+      <feBlend
+         in="SourceGraphic"
+         in2="shadow"
+         mode="normal"
+         id="feBlend18" />
+    </filter>
+  </defs>
+  <g
+     id="g20">
+    <path
+       id="hicg_background"
+       fill="#ecc400"
+       d="M79,40c0,28.893-10.105,39-39,39S1,68.893,1,40C1,11.106,11.105,1,40,1S79,11.106,79,40z" />
+    <path
+       id="hicg_highlight"
+       fill="#fff"
+       opacity="0.25"
+       d="M39.999,1C11.105,1,1,11.106,1,40c0,28.893,10.105,39,38.999,39   C68.896,79,79,68.893,79,40C79,11.106,68.896,1,39.999,1z M39.999,78.025C11.57,78.025,1.976,68.43,1.976,40   c0-28.429,9.595-38.024,38.023-38.024c28.43,0,38.024,9.596,38.024,38.024C78.023,68.43,68.429,78.025,39.999,78.025z" />
+    <path
+       id="hicg_overlay"
+       opacity="0.4"
+       fill="url(#hicg_overlay_grad)"
+       d="M78.977,40c0,28.893-10.1,39-38.977,39S1.023,68.893,1.023,40c0-28.894,10.1-39,38.977-39S78.977,11.106,78.977,40z" />
+  </g>
+  <g
+     transform="translate(13, 13) scale(0.675)"
+     filter="url(#hicg_drop_shadow)"
+     id="g25">
+    <sodipodi:namedview
+       pagecolor="#000000"
+       bordercolor="#666666"
+       borderopacity="1"
+       objecttolerance="10"
+       gridtolerance="10"
+       guidetolerance="10"
+       inkscape:pageopacity="0"
+       inkscape:pageshadow="2"
+       inkscape:window-width="1024"
+       inkscape:window-height="706"
+       id="namedview6"
+       showgrid="false"
+       inkscape:zoom="4.17193"
+       inkscape:cx="46.257723"
+       inkscape:cy="35.665994"
+       inkscape:window-x="0"
+       inkscape:window-y="27"
+       inkscape:window-maximized="1"
+       inkscape:current-layer="svg2" />
+    <metadata
+       id="metadata8">
+      <rdf:RDF>
+        <cc:Work
+           rdf:about="">
+          <dc:format>image/svg+xml</dc:format>
+          <dc:type
+             rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+          <dc:title></dc:title>
+        </cc:Work>
+      </rdf:RDF>
+    </metadata>
+    <defs
+       id="defs6" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2983"
+       style="font-size:20px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0.90000000000000002px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"><flowRegion
+         id="flowRegion2985"><rect
+           id="rect2987"
+           width="63.040371"
+           height="25.407906"
+           x="8.8687973"
+           y="27.50631"
+           style="font-size:20px;font-weight:bold;text-align:center;letter-spacing:0.90000000000000002px;text-anchor:middle;-inkscape-font-specification:Sans Bold;fill:#ffffff" /></flowRegion><flowPara
+         id="flowPara2989">2048</flowPara></flowRoot>  </g>
 </svg>
