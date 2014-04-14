@@ -13,7 +13,7 @@ PageStackWindow {
     }
     About {
         id: about
-        version: "v.0.1.1"
+        version: "v.0.1.3"
         height: parent.height
         width: parent.width
     }
