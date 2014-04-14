@@ -201,6 +201,7 @@ function moveTilesUp() {
 
                         moved = true
                         prepareTileMerging(ind,preind)
+                        container.merged(tiles[ind].value);
                         moveTile(ind,preind)
                         row = 0
 
@@ -239,6 +240,7 @@ function moveTilesDown() {
 
                         moved = true
                         prepareTileMerging(ind,preind)
+                        container.merged(tiles[ind].value);
                         moveTile(ind,preind)
                         row = grid_size
 
@@ -277,6 +279,7 @@ function moveTilesLeft() {
 
                         moved = true
                         prepareTileMerging(ind,preind)
+                        container.merged(tiles[ind].value);
                         moveTile(ind,preind)
                         column = 0
 
@@ -316,6 +319,7 @@ function moveTilesRight() {
 
                         moved = true
                         prepareTileMerging(ind,preind)
+                        container.merged(tiles[ind].value);
                         moveTile(ind,preind)
                         column = grid_size
 
