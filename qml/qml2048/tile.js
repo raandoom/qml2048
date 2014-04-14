@@ -28,8 +28,8 @@ function updateTextSize() {
 // set tile color (depend on current value)
 function updateColor() {
     switch (value) {
-    case 2      :
-    case 4      : labelContainer.color = "#eee4da"; break;
+    case 2      : labelContainer.color = "#eee4da"; break;
+    case 4      : labelContainer.color = "#ede0c8"; break;
     case 8      : labelContainer.color = "#f2b179"; break;
     case 16     : labelContainer.color = "#f59563"; break;
     case 32     : labelContainer.color = "#f67c5f"; break;
