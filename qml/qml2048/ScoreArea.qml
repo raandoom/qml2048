@@ -1,15 +1,62 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
+//import "topscore.js" as Topscore
 
 Row {
     spacing: 6
 
     property int score;
+    property int topscore;
 
-    function addScore(toAddScore)
+    function __db()
+    {
+        var _db = openDatabaseSync("QmlTwoKTopscore", "1.0", "Database for qml2048 scores", 100);
+        _db.transaction(__ensureTables);
+        return _db;
+    }
+
+
+    function __ensureTables(__tx)
+    {
+        __tx.executeSql('CREATE TABLE IF NOT EXISTS highscores(score INT, size INT)', []);
+    }
+
+    function addScore(toAddScore, size)
     {
         score += toAddScore;
-        currentscore.text = score;
+        lblcurrentscore.text = score;
+
+        if(topscore < score)
+        {
+            console.log("Saving highscore of size " + size);
+            topscore = score;
+            lbltopscore.text = topscore;
+            __db().transaction(function(tx){
+                                   tx.executeSql("DELETE FROM highscores WHERE size=?",[size]); // Keep the db clean
+                                   var rs = tx.executeSql('INSERT INTO highscores(score,size) VALUES (?,?)',[topscore, size]);
+                                   console.debug("Rows affected: " + rs.rowsAffected);
+            })
+            //Topscore.saveScore(topscore, size);
+        }
+    }
+    function reset(size)
+    {
+        console.log("Starting new game of size " + size);
+        score = 0;
+        lblcurrentscore.text = score;
+
+        __db().transaction(function(tx){
+                           var rs = tx.executeSql("SELECT score FROM highscores WHERE size=? ORDER BY score DESC LIMIT 1",[size]);
+                           if(rs.rows.length === 0)
+                           {
+                               topscore = 0;
+                           }
+                           else
+                           {
+                               topscore = rs.rows.item(0).score;
+                           }
+                           lbltopscore.text = topscore;
+                       })
     }
 
     Item {
@@ -32,7 +79,7 @@ Row {
                     text: "SCORE"
                 }
                 Text {
-                    id: currentscore
+                    id: lblcurrentscore
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.family: "Clear Sans"
                     font.pointSize: 24
@@ -64,7 +111,7 @@ Row {
                     text: "BEST"
                 }
                 Text {
-                    id: topscore
+                    id: lbltopscore
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.family: "Clear Sans"
                     font.pointSize: 24

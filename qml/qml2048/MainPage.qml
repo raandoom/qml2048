@@ -24,7 +24,7 @@ Page {
                 id: board
                 width: parent.width
 
-                onMerged: score.addScore(value)
+                onMerged: score.addScore(value, board.grid_size)
 
                 SwipeArea {
                     id: swipe
@@ -42,5 +42,6 @@ Page {
 
     function newGameRequest(size) {
         board.newGame(size)
+        score.reset(board.grid_size)
     }
 }
