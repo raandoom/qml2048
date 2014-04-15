@@ -9,39 +9,35 @@ Page {
         anchors.fill: parent
         color: "#faf8ef"
 
-        Column {
-            spacing: 2
-            width: parent.width - 10
+        ScoreArea {
+            id: score
             anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width - 10
+            height: board.y - 10
+            y: 5
+        }
 
-            ScoreArea {
-                id: score
-                width: parent.width
-                height: 130
-            }
+        Board {
+            id: board
+            anchors.centerIn: parent
+            width: parent.width - 10
 
-            Board {
-                id: board
-                width: parent.width
+            onMerged: score.addScore(value, board.grid_size)
 
-                onMerged: score.addScore(value, board.grid_size)
+            SwipeArea {
+                id: swipe
+                anchors.fill: parent
 
-                SwipeArea {
-                    id: swipe
-                    anchors.fill: parent
-
-
-                    onSwipeUp: board.moveTilesUp()
-                    onSwipeDown: board.moveTilesDown()
-                    onSwipeLeft: board.moveTilesLeft()
-                    onSwipeRight: board.moveTilesRight()
-                }
+                onSwipeUp: board.moveTilesUp()
+                onSwipeDown: board.moveTilesDown()
+                onSwipeLeft: board.moveTilesLeft()
+                onSwipeRight: board.moveTilesRight()
             }
         }
     }
 
     function newGameRequest(size) {
+        score.reset(size)
         board.newGame(size)
-        score.reset(board.grid_size)
     }
 }

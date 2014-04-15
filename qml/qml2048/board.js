@@ -36,7 +36,7 @@ function updateBackground() {
         if (tiles[i] != null) {
             if (tiles[i].merged_cell)
                 tiles[i].merged_cell.kill()
-            tiles[i].kill()
+            tiles[i].destroy()
         }
     }
     tiles = new Array(max_index)

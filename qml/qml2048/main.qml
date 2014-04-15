@@ -4,16 +4,14 @@ import com.nokia.meego 1.0
 PageStackWindow {
     id: appWindow
     initialPage: mainPage
-    Component.onCompleted: {
-        mainPage.newGameRequest(slider.value)
-    }
+    Component.onCompleted: mainPage.newGameRequest(slider.value)
 
     MainPage {
         id: mainPage
     }
     About {
         id: about
-        version: "v.0.1.3"
+        version: "v.0.2.0"
         height: parent.height
         width: parent.width
     }
@@ -34,9 +32,7 @@ PageStackWindow {
         MenuLayout {
             MenuItem {
                 text: qsTr("New game")
-                onClicked: {
-                    mainPage.newGameRequest(slider.value)
-                }
+                onClicked: mainPage.newGameRequest(slider.value)
             }
             MenuItem {
                 Slider {
@@ -47,9 +43,7 @@ PageStackWindow {
                     stepSize: 1
                     valueIndicatorVisible: true
                     width: parent.width
-                    onValueChanged: {
-                        mainPage.newGameRequest(slider.value)
-                    }
+                    onValueChanged: mainPage.newGameRequest(slider.value)
                 }
             }
             MenuItem {
