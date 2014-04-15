@@ -15,6 +15,8 @@ Rectangle {
 
     property bool listenActions: false
 
+    signal merged(int value)
+
     function newGame(size) {
         Board.newGame(size)
     }

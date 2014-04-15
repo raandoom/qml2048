@@ -34,7 +34,9 @@ PageStackWindow {
         MenuLayout {
             MenuItem {
                 text: qsTr("New game")
-                onClicked: mainPage.newGameRequest(slider.value)
+                onClicked: {
+                    mainPage.newGameRequest(slider.value)
+                }
             }
             MenuItem {
                 Slider {
