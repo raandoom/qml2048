@@ -1,6 +1,12 @@
+qml2048 (0.2.1) unstable; urgency=low
+
+  * Fixed highscore saving
+
+ -- Savkin Sergey <random.m3m@gmail.com>  Wed, 16 Apr 2014 09:26:38 +0400
+
 qml2048 (0.2.0) unstable; urgency=low
 
-  * Added score and hiscore for each board size ( thanks to rubdos )
+  * Added score and highscore for each board size ( thanks to rubdos )
 
  -- Savkin Sergey <random.m3m@gmail.com>  Wed, 16 Apr 2014 02:37:22 +0400
 

@@ -62,7 +62,7 @@ Dialog {
                 "This application based on 2048 game created by Gabriele Cirulli: " +
                 "<a href=http://git.io/2048>http://git.io/2048</a>" +
                 "<br><br>" +
-                "At this moment there is no highscore, no game saving, no checks for game over, you can only merging tiles with swipe gesture." +
+                "At this moment there is no game saving and no checks for game over." +
                 "<br>" +
                 "And one more thing just for fun: you can resize board from 2x2 to 10x10."
 

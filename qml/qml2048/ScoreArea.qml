@@ -8,6 +8,7 @@ Row {
 
     function reset(boardSize)
     {
+        storeHighscore()
         currentBoardSize = boardSize
         scoreItem.value = 0
         bestItem.value = Storage.getHighscore(boardSize)
@@ -20,9 +21,11 @@ Row {
             bestItem.value = scoreItem.value
     }
 
-    Component.onDestruction: {
+    function storeHighscore() {
         Storage.setHighscore(bestItem.value,currentBoardSize)
     }
+
+    Component.onDestruction: storeHighscore()
 
     ScoreItem {
         id: scoreItem
