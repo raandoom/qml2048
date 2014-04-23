@@ -60,11 +60,7 @@ Dialog {
                 "<a href=https://github.com/raandoom/qml2048>https://github.com/raandoom/qml2048</a>" +
                 "<br><br>" +
                 "This application based on 2048 game created by Gabriele Cirulli: " +
-                "<a href=http://git.io/2048>http://git.io/2048</a>" +
-                "<br><br>" +
-                "At this moment there is no game saving and no checks for game over." +
-                "<br>" +
-                "And one more thing just for fun: you can resize board from 2x2 to 10x10."
+                "<a href=http://git.io/2048>http://git.io/2048</a>"
 
             onLinkActivated: Qt.openUrlExternally(link)
         }
