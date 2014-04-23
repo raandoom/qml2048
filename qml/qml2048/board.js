@@ -29,24 +29,32 @@ function newGame(size) {
     addStartTiles()
 }
 
-// build new board
-function updateBackground() {
-    // delete all tiles
+// delete all tiles
+function clearTiles() {
     for (var i = 0; i < tiles.length; i++) {
         if (tiles[i] != null) {
             if (tiles[i].merged_cell)
-                tiles[i].merged_cell.kill()
+                tiles[i].merged_cell.destroy()
             tiles[i].destroy()
         }
     }
-    tiles = new Array(max_index)
+}
 
-    // delete old background cells
+// delete all background cells
+function clearBackground() {
     for (var i = 0; i < backGroundCells.length; i++) {
         if (backGroundCells[i] != null) {
             backGroundCells[i].destroy()
         }
     }
+}
+
+// build new board
+function updateBackground() {
+    clearTiles()
+    tiles = new Array(max_index)
+
+    clearBackground()
     backGroundCells = new Array(max_index)
 
     // create new background cells
@@ -102,6 +110,11 @@ function addRandomTile() {
             var position = cellPosition(row(avIndex),column(avIndex))
             tileObj.show(position,cell_size)
             tiles[avIndex] = tileObj
+
+            if (!cellsAvailable() && !mergeAvailable()) {
+                end()
+            }
+
         } else {
             console.log("error loading tile component")
             console.log(comp.errorString())
@@ -132,6 +145,35 @@ function randomAvailableCell() {
     if (avc.length) {
         return avc[Math.floor(Math.random() * avc.length)]
     }
+}
+
+// check if board has tiles that can be merged
+function mergeAvailable() {
+    for (var row = 0; row < grid_size; row++) {
+        for (var column = 0; column < grid_size; column++) {
+            var currentIndex = index(row,column)
+            var checkIndex
+            if (tiles[currentIndex] != null) {
+                var rightColumn = column + 1
+                var bottomRow = row + 1
+                // check right tile
+                checkIndex = index(row,rightColumn)
+                if ((rightColumn < grid_size) && tiles[checkIndex] != null) {
+                    if (tiles[currentIndex].value == tiles[checkIndex].value) {
+                        return true
+                    }
+                }
+                // check bottom tile
+                checkIndex = index(bottomRow,column)
+                if ((bottomRow < grid_size) && tiles[checkIndex] != null) {
+                    if (tiles[currentIndex].value == tiles[checkIndex].value) {
+                        return true
+                    }
+                }
+            }
+        }
+    }
+    return false
 }
 
 // check if tiles can be merged

@@ -1,4 +1,7 @@
-var db = null;
+.pragma library
+
+var db = null
+var animation_speed = 200
 
 function openDb()
 {
@@ -14,7 +17,7 @@ function ensureTablesExist(tx)
     tx.executeSql('CREATE TABLE IF NOT EXISTS highscores(score INT, size INT UNIQUE)',[])
 }
 
-function setHighscore(score, size)
+function setHighscore(score,size)
 {
     openDb()
     db.transaction(function(tx){
@@ -26,15 +29,13 @@ function setHighscore(score, size)
 
 function getHighscore(size)
 {
-    openDb();
-    var topscore = 0;
+    openDb()
+    var topscore = 0
     db.transaction(function(tx){
-                       var rs = tx.executeSql("SELECT score FROM highscores WHERE size=? ORDER BY score DESC LIMIT 1",[size])
-
-                       if(rs.rows.length == 0)
-                           topscore = 0
-                       else
-                           topscore = rs.rows.item(0).score
-                   })
-    return topscore;
+                    var rs = tx.executeSql("SELECT score FROM highscores WHERE size=? ORDER BY score DESC LIMIT 1",[size])
+                    if(rs.rows.length > 0) {
+                        topscore = rs.rows.item(0).score
+                    }
+                })
+    return topscore
 }

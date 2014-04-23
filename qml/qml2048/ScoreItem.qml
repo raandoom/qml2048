@@ -1,5 +1,6 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
+import "scoreitem.js" as ScoreItem
 
 Item {
     id: container
@@ -23,6 +24,7 @@ Item {
                 text: container.text
             }
             Text {
+                id: score
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: parent.height * 0.6
                 font.bold: true
@@ -34,6 +36,7 @@ Item {
                         scale = parent.width / width * 0.9
                     else
                         scale = 1
+                    ScoreItem.fade()
                 }
             }
         }

@@ -16,8 +16,11 @@ Rectangle {
     property bool listenActions: false
 
     signal merged(int value)
+    signal end()
 
     function newGame(size) {
+        if (size == null)
+            size = grid_size
         Board.newGame(size)
     }
 

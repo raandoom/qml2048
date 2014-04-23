@@ -1,10 +1,11 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
+import "storage.js" as Storage
 
 PageStackWindow {
     id: appWindow
     initialPage: mainPage
-    Component.onCompleted: mainPage.newGameRequest(slider.value)
+    Component.onCompleted: mainPage.newGameRequest()
 
     MainPage {
         id: mainPage
@@ -32,7 +33,7 @@ PageStackWindow {
         MenuLayout {
             MenuItem {
                 text: qsTr("New game")
-                onClicked: mainPage.newGameRequest(slider.value)
+                onClicked: mainPage.newGameRequest()
             }
             MenuItem {
                 Slider {
@@ -43,7 +44,29 @@ PageStackWindow {
                     stepSize: 1
                     valueIndicatorVisible: true
                     width: parent.width
-                    onValueChanged: mainPage.newGameRequest(slider.value)
+                    onValueChanged: mainPage.newGameRequest(value)
+                }
+            }
+            MenuItem {
+                ButtonRow {
+                    anchors.fill: parent
+                    anchors.margins: 5
+                    Button {
+                        text: "Slow"
+                        height: parent.height
+                        onClicked: Storage.animation_speed = 400
+                    }
+                    Button {
+                        text: "Normal"
+                        height: parent.height
+                        checked: true
+                        onClicked: Storage.animation_speed = 200
+                    }
+                    Button {
+                        text: "Fast"
+                        height: parent.height
+                        onClicked: Storage.animation_speed = 100
+                    }
                 }
             }
             MenuItem {

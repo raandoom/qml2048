@@ -6,6 +6,7 @@ function show() {
     labelContainer.center_x = x
     labelContainer.center_y = y
     show_anim.to = cell.width
+    show_anim.duration = Storage.animation_speed
     show_anim.start()
 }
 
@@ -15,6 +16,7 @@ function move() {
         merged_cell.move()
     if (new_x && new_y) {
         move_anim.to = Qt.point(new_x,new_y)
+        move_anim.duration = Storage.animation_speed
         move_anim.start()
     }
 }

@@ -6,6 +6,7 @@ Page {
     orientationLock: PageOrientation.LockPortrait
 
     Rectangle {
+        id: gameArea
         anchors.fill: parent
         color: "#faf8ef"
 
@@ -22,7 +23,8 @@ Page {
             anchors.centerIn: parent
             width: parent.width - 10
 
-            onMerged: score.addScore(value, board.grid_size)
+            onMerged: score.addScore(value, grid_size)
+            onEnd: loseScreen.show()
 
             SwipeArea {
                 id: swipe
@@ -33,6 +35,19 @@ Page {
                 onSwipeLeft: board.moveTilesLeft()
                 onSwipeRight: board.moveTilesRight()
             }
+        }
+    }
+
+    LosePage {
+        id: loseScreen
+        width: gameArea.width
+        height: gameArea.height
+        y: - height
+        color: "#80000000"
+
+        onNewGameClicked: {
+            hide()
+            newGameRequest()
         }
     }
 

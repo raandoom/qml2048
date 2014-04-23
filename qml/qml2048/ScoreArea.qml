@@ -4,17 +4,20 @@ import "storage.js" as Storage
 
 Row {
 
-    property int currentBoardSize
+    property int currentBoardSize: 4
 
     function reset(boardSize)
     {
+        if (boardSize == null)
+            boardSize = currentBoardSize
+
         storeHighscore()
         currentBoardSize = boardSize
         scoreItem.value = 0
         bestItem.value = Storage.getHighscore(boardSize)
     }
 
-    function addScore(scoreToAdd,boardSize)
+    function addScore(scoreToAdd)
     {
         scoreItem.value += scoreToAdd
         if(bestItem.value < scoreItem.value)

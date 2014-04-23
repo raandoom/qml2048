@@ -1,6 +1,7 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 import "tile.js" as Tile
+import "storage.js" as Storage
 
 Rectangle {
 
@@ -36,6 +37,8 @@ Rectangle {
     }
 
     function kill() {
+        kill_scale.duration = Storage.animation_speed
+        kill_opac.duration = Storage.animation_speed
         kill_anim.start()
     }
 
@@ -76,8 +79,8 @@ Rectangle {
 
     ParallelAnimation {
         id: kill_anim
-        PropertyAnimation { target: cell; property: "scale";   duration: 200; from: 1; to: 2; }
-        PropertyAnimation { target: cell; property: "opacity"; duration: 200; from: 1; to: 0; }
+        PropertyAnimation { id: kill_scale; target: cell; property: "scale";   duration: 200; from: 1; to: 2; }
+        PropertyAnimation { id: kill_opac; target: cell; property: "opacity"; duration: 200; from: 1; to: 0; }
         onRunningChanged: {
             if (!running) { // animation completed
                 cell.destroy()
