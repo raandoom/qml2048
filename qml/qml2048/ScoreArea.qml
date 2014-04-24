@@ -25,7 +25,8 @@ Row {
     }
 
     function storeHighscore() {
-        Storage.setHighscore(bestItem.value,currentBoardSize)
+        if (bestItem.value)
+            Storage.setHighscore(bestItem.value,currentBoardSize)
     }
 
     Component.onDestruction: storeHighscore()

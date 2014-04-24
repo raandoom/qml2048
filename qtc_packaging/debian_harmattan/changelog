@@ -1,3 +1,9 @@
+qml2048 (0.3.3) unstable; urgency=low
+
+  * Fix highscore saving
+
+ -- Savkin Sergey <random.m3m@gmail.com>  Thu, 24 Apr 2014 21:40:01 +0400
+
 qml2048 (0.3.2) unstable; urgency=low
 
   * Score item animation
