@@ -11,7 +11,9 @@ Row {
         if (boardSize == null)
             boardSize = currentBoardSize
 
-        storeHighscore()
+        if (bestItem.value > 0)
+            storeHighscore()
+
         currentBoardSize = boardSize
         scoreItem.value = 0
         bestItem.value = Storage.getHighscore(boardSize)

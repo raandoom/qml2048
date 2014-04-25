@@ -5,7 +5,10 @@ import "storage.js" as Storage
 PageStackWindow {
     id: appWindow
     initialPage: mainPage
-    Component.onCompleted: mainPage.newGameRequest()
+    Component.onCompleted: {
+        mainPage.newGameRequest()
+        slider.valueChanged.connect(function() { mainPage.newGameRequest(slider.value) })
+    }
 
     MainPage {
         id: mainPage
@@ -44,7 +47,6 @@ PageStackWindow {
                     stepSize: 1
                     valueIndicatorVisible: true
                     width: parent.width
-                    onValueChanged: mainPage.newGameRequest(value)
                 }
             }
             MenuItem {
