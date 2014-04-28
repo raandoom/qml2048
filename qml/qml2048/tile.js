@@ -30,20 +30,51 @@ function updateTextSize() {
 // set tile color (depend on current value)
 function updateColor() {
     switch (value) {
-    case 2      : labelContainer.color = "#eee4da"; break;
-    case 4      : labelContainer.color = "#ede0c8"; break;
-    case 8      : labelContainer.color = "#f2b179"; break;
-    case 16     : labelContainer.color = "#f59563"; break;
-    case 32     : labelContainer.color = "#f67c5f"; break;
-    case 64     : labelContainer.color = "#f65e3b"; break;
-    case 128    : labelContainer.color = "#edcf72"; break;
-    case 256    : labelContainer.color = "#edcc61"; break;
-    case 512    : labelContainer.color = "#edc850"; break;
-    case 1024   : labelContainer.color = "#edc53f"; break;
-    case 2048   : labelContainer.color = "#edc22e"; break;
+    case 2      :
+        labelContainer.color = "#eee4da"
+        break
+    case 4      :
+        labelContainer.color = "#ede0c8"
+        break
+    case 8      :
+        labelContainer.color = "#f2b179"
+        label.color = "#f9f6f2"
+        break
+    case 16     :
+        labelContainer.color = "#f59563"
+        label.color = "#f9f6f2"
+        break
+    case 32     :
+        labelContainer.color = "#f67c5f"
+        label.color = "#f9f6f2"
+        break
+    case 64     :
+        labelContainer.color = "#f65e3b"
+        label.color = "#f9f6f2"
+        break
+    case 128    :
+        labelContainer.color = "#edcf72"
+        label.color = "#f9f6f2"
+        break
+    case 256    :
+        labelContainer.color = "#edcc61"
+        label.color = "#f9f6f2"
+        break
+    case 512    :
+        labelContainer.color = "#edc850"
+        label.color = "#f9f6f2"
+        break
+    case 1024   :
+        labelContainer.color = "#edc53f"
+        label.color = "#f9f6f2"
+        break
+    case 2048   :
+        labelContainer.color = "#edc22e"
+        label.color = "#f9f6f2"
+        break
     default     :
-        labelContainer.color = "#3c3a32";
-        label.color = "#eee4da";
-        break;
+        labelContainer.color = "#3c3a32"
+        label.color = "#f9f6f2"
+        break
     }
 }
