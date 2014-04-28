@@ -1,6 +1,7 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
 import "storage.js" as Storage
+import "speed.js" as Speed
 
 PageStackWindow {
     id: appWindow
@@ -49,25 +50,32 @@ PageStackWindow {
             }
             MenuItem {
                 ButtonRow {
+                    id: speedButton
                     anchors.fill: parent
                     anchors.margins: 5
+                    onCheckedButtonChanged: Storage.animation_speed =
+                                            speedButton.checkedButton.speed
                     Button {
+                        property int speed: 400
+                        id: slowSpeedButton
                         text: "Slow"
                         height: parent.height
-                        onClicked: Storage.animation_speed = 400
                     }
                     Button {
+                        property int speed: 200
+                        id: normalSpeedButton
                         text: "Normal"
                         height: parent.height
-                        checked: true
-                        onClicked: Storage.animation_speed = 200
                     }
                     Button {
+                        property int speed: 100
+                        id: fastSpeedButton
                         text: "Fast"
                         height: parent.height
-                        onClicked: Storage.animation_speed = 100
                     }
                 }
+                Component.onCompleted: Speed.loadSpeed()
+                Component.onDestruction: Speed.saveSpeed()
             }
             MenuItem {
                 text: qsTr("About")
