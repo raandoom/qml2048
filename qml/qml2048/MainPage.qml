@@ -16,6 +16,8 @@ Page {
             width: parent.width - 10
             height: board.y - 10
             y: 5
+
+            Component.onDestruction: storeScore()
         }
 
         Board {
@@ -25,6 +27,8 @@ Page {
 
             onMerged: score.addScore(value)
             onEnd: loseScreen.show()
+
+            Component.onDestruction: storeTiles()
 
             SwipeArea {
                 id: swipe
