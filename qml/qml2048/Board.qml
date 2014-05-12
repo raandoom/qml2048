@@ -14,7 +14,7 @@ Rectangle {
     property real grid_spacing: 4
     property real cell_size: (width - grid_spacing * (grid_size + 1)) / grid_size
 
-    property bool listenActions: false
+    property bool listenActions: true
 
     signal merged(int value)
     signal end()
