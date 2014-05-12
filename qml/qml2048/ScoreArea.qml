@@ -4,7 +4,7 @@ import "storage.js" as Storage
 
 Row {
 
-    property int currentBoardSize: 4
+    property int currentBoardSize: 0
 
     function reset(boardSize)
     {
@@ -24,12 +24,21 @@ Row {
             bestItem.value = scoreItem.value
     }
 
+    function loadScore() {
+        scoreItem.value = Storage.getScore(currentBoardSize)
+    }
+
+    function storeScore() {
+            Storage.setScore(scoreItem.value,currentBoardSize)
+    }
+
     function storeHighscore() {
-        if (bestItem.value)
             Storage.setHighscore(bestItem.value,currentBoardSize)
     }
 
-    Component.onDestruction: storeHighscore()
+    Component.onDestruction: {
+        storeHighscore()
+    }
 
     ScoreItem {
         id: scoreItem

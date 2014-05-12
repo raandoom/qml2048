@@ -79,7 +79,7 @@ Rectangle {
 
     ParallelAnimation {
         id: kill_anim
-        PropertyAnimation { id: kill_scale; target: cell; property: "scale";   duration: 200; from: 1; to: 2; }
+        PropertyAnimation { id: kill_scale; target: cell; property: "scale"; duration: 200; from: 1; to: 2; }
         PropertyAnimation { id: kill_opac; target: cell; property: "opacity"; duration: 200; from: 1; to: 0; }
         onRunningChanged: {
             if (!running) { // animation completed

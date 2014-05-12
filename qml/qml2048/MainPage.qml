@@ -23,7 +23,7 @@ Page {
             anchors.centerIn: parent
             width: parent.width - 10
 
-            onMerged: score.addScore(value, grid_size)
+            onMerged: score.addScore(value)
             onEnd: loseScreen.show()
 
             SwipeArea {
@@ -48,6 +48,21 @@ Page {
         onNewGameClicked: {
             hide()
             newGameRequest()
+        }
+    }
+
+    function startGame(size) {
+        if (size) {
+            if (board.grid_size == size) {
+                newGameRequest(size)
+            } else {
+                score.storeScore()
+                board.storeTiles()
+                score.reset(size)
+                score.loadScore()
+                board.updateBackground(size)
+                board.loadTiles()
+            }
         }
     }
 

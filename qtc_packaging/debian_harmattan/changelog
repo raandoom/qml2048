@@ -1,3 +1,9 @@
+qml2048 (0.5.0) unstable; urgency=low
+
+  * Save and load last game for every board
+
+ -- Savkin Sergey <random.m3m@gmail.com>  Tue, 13 May 2014 01:54:11 +0400
+
 qml2048 (0.3.3) unstable; urgency=low
 
   * Fix highscore saving

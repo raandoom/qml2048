@@ -1,6 +1,26 @@
 var backGroundCells = new Array
 var tiles = new Array
 
+// get array with tile values
+function tiles2array() {
+    var ar = new Array(tiles.length)
+    for (var i = 0; i < max_index; i++) {
+        if (tiles[i]) {
+            ar[i] = tiles[i].value
+        }
+    }
+    return ar
+}
+
+// create tiles from array
+function array2tiles(ar) {
+    for (var i = 0; i < max_index; i++) {
+        if (ar[i]) {
+            addTile(i,ar[i])
+        }
+    }
+}
+
 // tile index from row and column
 function index(row,column) {
     return column + row * grid_size
@@ -94,32 +114,38 @@ function addRandomTile() {
     listenActions = true
     if (cellsAvailable()) {
         var value = Math.random() < 0.9 ? 2 : 4
-        var comp = Qt.createComponent("Tile.qml")
-        if (comp.status == Component.Ready) {
-            var tileObj = comp.createObject(board)
-            if (tileObj == null) {
-                console.log("error creating tile")
-                console.log(comp.errorString())
-                return
-            }
+        var avIndex = randomAvailableCell()
 
-            tileObj.moved.connect(addRandomTile)
+        addTile(avIndex,value)
+    }
 
-            tileObj.value = value
-            var avIndex = randomAvailableCell()
-            var position = cellPosition(row(avIndex),column(avIndex))
-            tileObj.show(position,cell_size)
-            tiles[avIndex] = tileObj
+    if (!cellsAvailable() && !mergeAvailable()) {
+        end()
+    }
+}
 
-            if (!cellsAvailable() && !mergeAvailable()) {
-                end()
-            }
-
-        } else {
-            console.log("error loading tile component")
+// add tile to position with value
+function addTile(ind,val) {
+    var comp = Qt.createComponent("Tile.qml")
+    if (comp.status == Component.Ready) {
+        var tileObj = comp.createObject(board)
+        if (tileObj == null) {
+            console.log("error creating tile")
             console.log(comp.errorString())
             return
         }
+
+        tileObj.moved.connect(addRandomTile)
+
+        tileObj.value = val
+        var position = cellPosition(row(ind),column(ind))
+        tileObj.show(position,cell_size)
+        tiles[ind] = tileObj
+
+    } else {
+        console.log("error loading tile component")
+        console.log(comp.errorString())
+        return
     }
 }
 

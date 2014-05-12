@@ -6,14 +6,21 @@ import "speed.js" as Speed
 PageStackWindow {
     id: appWindow
     initialPage: mainPage
-    Component.onCompleted: mainPage.newGameRequest()
+    Component.onCompleted: {
+        slider.maximumValue = 10
+        var ls = Storage.getState("lastBoardSize")
+        if (ls == null)
+            ls = 4
+        slider.value = ls
+        slider.minimumValue = 2
+    }
 
     MainPage {
         id: mainPage
     }
     About {
         id: about
-        version: "v.0.3.3"
+        version: "v.0.5.0"
         height: parent.height
         width: parent.width
     }
@@ -39,13 +46,11 @@ PageStackWindow {
             MenuItem {
                 Slider {
                     id: slider
-                    minimumValue: 2
-                    maximumValue: 10
-                    value: 4
                     stepSize: 1
                     valueIndicatorVisible: true
                     width: parent.width
-                    onValueChanged: mainPage.newGameRequest(value)
+                    onValueChanged: mainPage.startGame(value)
+                    Component.onDestruction: Storage.setState("lastBoardSize",value)
                 }
             }
             MenuItem {
