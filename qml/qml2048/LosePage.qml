@@ -26,7 +26,7 @@ Rectangle {
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            text: "It looks like there is no more moves available"
+            text: "It looks like there are no more moves available"
 
         }
 
