@@ -59,7 +59,7 @@ Dialog {
                 "Sources can be found at: " +
                 "<a href=https://github.com/raandoom/qml2048>https://github.com/raandoom/qml2048</a>" +
                 "<br><br>" +
-                "This application based on 2048 game created by Gabriele Cirulli: " +
+                "This application is based on the 2048 game created by Gabriele Cirulli: " +
                 "<a href=http://git.io/2048>http://git.io/2048</a>"
 
             onLinkActivated: Qt.openUrlExternally(link)
